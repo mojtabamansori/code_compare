@@ -60,4 +60,13 @@ for number,i in enumerate(tane_number_acc):
             tane_seen.add(i)
 
 print('tane_brabar = ', tane_brabar)
+csv = df[a,:]
+csv = pd.DataFrame(csv)
 
+csv.to_excel(r'E:\code parking\database\mozedone.xlsx', index=False)
+indices_not_a = np.setdiff1d(np.arange(len(df)), a)
+csv_not_a = df[indices_not_a, :]
+csv_not_a = pd.DataFrame(csv_not_a)
+
+# Save the DataFrame with rows not in 'a' to a different Excel file
+csv_not_a.to_excel(r'E:\code parking\database\mozedone_not_a.xlsx', index=False)
