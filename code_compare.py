@@ -22,10 +22,11 @@ pelak_acc = df[:, 2]
 pelak_csv = df_csv[:, 6]
 pelak_brabar = 0
 pelak_seen = set()
-
-for i in pelak_acc:
+a = []
+for number,i in enumerate(pelak_acc):
     for i2 in pelak_csv:
         if i2 == i and i not in pelak_seen:
+            a.append(np.argwhere(pelak_acc==i)[0][0])
             pelak_brabar = pelak_brabar + 1
             pelak_seen.add(i)
 
@@ -36,9 +37,10 @@ motor_number_csv = df_csv[:, 3]
 motor_brabar = 0
 motor_seen = set()
 
-for i in motor_number_acc:
+for number,i in enumerate(motor_number_acc):
     for i2 in motor_number_csv:
         if i2 == i and i not in motor_seen:
+            a.append(np.argwhere(motor_number_acc==i)[0][0])
             motor_brabar = motor_brabar + 1
             motor_seen.add(i)
 
@@ -49,9 +51,11 @@ tane_number_csv = df_csv[:, 2]
 tane_brabar = 0
 tane_seen = set()
 
-for i in tane_number_acc:
+for number,i in enumerate(tane_number_acc):
     for i2 in tane_number_csv:
+
         if i2 == i and i not in tane_seen:
+            a.append(np.argwhere(tane_number_acc == i)[0][0])
             tane_brabar = tane_brabar + 1
             tane_seen.add(i)
 
